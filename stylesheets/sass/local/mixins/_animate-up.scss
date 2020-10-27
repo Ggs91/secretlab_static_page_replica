@@ -1,0 +1,7 @@
+@mixin animate-up { /*On l'ajoute au hover des article*/
+  -webkit-transition: all 0.45s ;
+  -webkit-transform: translate3d(0, -3px, 0);
+  -webkit-box-shadow: 0px 23px 123px -9px rgba(0,0,0,0.75);
+     -moz-box-shadow: 0px 23px 123px -9px rgba(0,0,0,0.75);
+          box-shadow: 0px 23px 123px -9px rgba(0,0,0,0.75);
+}

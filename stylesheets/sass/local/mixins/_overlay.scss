@@ -1,0 +1,6 @@
+/*A aplliquer direct à tout élément qui voudrais avoir un effet de voile sombre + text qui passe en blanc*/
+@mixin overlay {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1);
+}

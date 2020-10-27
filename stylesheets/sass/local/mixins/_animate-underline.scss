@@ -1,0 +1,25 @@
+@mixin animate-underline($line-color) {
+  position: relative; /*Sert à la fois pour mettre le :before ET mettre le z-index necessaire pour mettre les h5 au dessus du metalink des article. */
+  z-index: 150;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  &:before {
+    content: "";
+    position: absolute;  /*on est en train de mettre une div ac height:2px et sans width sous le contenu*/
+    width:0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: $line-color;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+
+  &:hover:before{
+    visibility: visible;
+    width: 100%;
+    font-weight: 700;
+  }
+}

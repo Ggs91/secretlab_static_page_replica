@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SecretLab</title>
+  <script src="https://kit.fontawesome.com/121d1195fa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="stylesheets/css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Muli:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header id="primary-header">
+    <div class="container">
+
+      <div class="header-wrapper">
+
+        <div class="header-left">
+          <img class="logo" src="images/logo.png" alt="Secretlab Logo">
+        </div>
+
+        <div class="header-right">
+          <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+          <span class="btn-animate">
+            <a href="#" class="btn-primary shop-now-btn">Shop Now</a>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Showcase -->
+
+  <div class="container">
+    <section id="showcase">
+      <img class="showcase-bg" src="images/leather.jpg" alt="">
+      <div class="text">
+        <div class="inner-wrap-text">
+          <a href="#"><h5>Chair Guides</h5></a>
+          <h2>Fabric vs. PU leather: What's the difference?</h2>
+          <p>Secretlab SoftWeave® Fabric or PRIME™ 2.0 PU leather? One of them is airy and soft to touch, while the other...</p>
+          <span class="btn-animate">
+            <a href="#" class="btn-primary">Read More</a>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="container">
+    <div class="main-wrapper">
+
+      <!-- Articles -->
+
+      <section id="articles">
+
+        <article class="teaser">
+          <a class="metalink" href="#"></a> <!--Sert uniquement à rendre tout l'article cliqkable. Semantiquement mieux de le mettre comme ça plutot que d'entourer l'article-->
+          <div class="teaser-img">
+            <span class="img-animate"><img src="images/chair.jpg" alt="A chair"></span>
+          </div>
+          <div class="teaser-text">
+            <a href="#"><h5>Chair Guides</h5></a>
+            <h2>All you need to know about the Secretlab PRIME™ 2.0 PU leather</h2>
+            <p>Over three years ago, we set out to engineer and spec a PU leather that would be the hallmark for durability ...</p>
+            <footer class="article-footer">
+              <time datetime="2020-05-20 19:00">May 29, 2020</time>
+            </footer>
+          </div>
+        </article>
+
+
+        <article class="teaser">
+          <a class="metalink" href="#"></a>    <!--Pas prit en compte comme flex-item car il est absolute -->
+          <div class="teaser-img">
+            <span class="img-animate"> <!--ce span (display:block) ne gène pas l'img car il prend le width du parent (teaser-img qui est le flex item ac hard width) et l'img prend le width du span qui est le mm-->
+              <img src="images/harley.jpg" alt="A chair">
+            </span>
+          </div>
+          <div class="teaser-text">
+            <a href="#"><h5>Chair Guides</h5></a>
+            <h2>Secretlab launches limited-edition Harley Quinn gaming chair to celebrate Warner Bros. Pictures’ and DC action-adventure Harley Quinn: Birds of Prey</h2>
+            <p>
+              FEBRUARY 7, 2020—International gaming seat specialist Secretlab, in collaboration with Warner Bros. Consumer Products and DC, today launched their latest collaboration.
+              The Secretlab Birds of...
+            </p>
+            <footer class="article-footer">
+              <time datetime="2020-02-07 19:00">February 7, 2020</time>
+            </footer>
+          </div>
+        </article>
+123456
+      </section>
+
+      <!-- Sidebar -->
+
+      <aside id="sidebar">
+
+        <form class="sidebar-form">
+          <input type="text" placeholder="Search...">
+          <button type="submit" name="button"><i class="fas fa-search"></i></button>
+        </form>
+
+        <section class="trending">
+          <h4>What's Trending</h4>
+          <ul>
+            <li>
+              <a class="metalink" href="#"></a> <!--Positionné en absolute, sert uniquement à rendre le li clickable (pas l'inverse, semantiquement invalide un li dans un a). Le hover sur le li fonctionne tjs mm si ce metalink est superposé dessus !-->
+              <img class="bg-img" src="images/leather.jpg" alt=""> <!--Elle aussi, avec opacity 0 qui passe à 1 qd on hover le li-->
+              <article>
+                  <h3>Shipping updates in light of COVID-19</h3>
+                <footer>
+                  <time datetime="2020-03-26 19:00">March 26, 2020</time>
+                </footer>
+              </article>
+            </li>
+            <li>
+              <a class="metalink" href="#"></a>
+              <img class="bg-img" src="images/gamer.jpg" alt="">
+              <article>
+                <h3>Shipping updates in light of COVID-19</h3>
+                <footer>
+                  <time datetime="2018-10-02 19:00">November 2, 2018</time>
+                </footer>
+              </article>
+            </li>
+            <li>
+              <a class="metalink" href="#"></a>
+              <img class="bg-img" src="images/harley.jpg" alt="">
+              <article>
+                <h3>5 essential tips to get the most out of your Secretlab chair</h3>
+                <footer>
+                  <time datetime="2018-09-27 19:00">September 27, 2018</time>
+                </footer>
+              </article>
+            </li>
+            <li>
+              <a class="metalink" href="#"></a>
+              <img class="bg-img" src="images/players.jpg" alt="">
+              <article>
+                <h3>Secretlab Buying Guide: Finding your perfect fit</h3>
+                <footer>
+                  <time datetime="2020-01-17 19:00">January 17, 2020</time>
+                </footer>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="categories">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Chair Guides</a></li>
+            <li><a href="#">Health & Wellness</a></li>
+            <li><a href="#">Secretlab Endorser Series</a></li>
+            <li><a href="#">User Hacks</a></li>
+          </ul>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+  <footer id="primary-footer">
+    <div class="container">
+      <div class="footer-wrapper">
+
+        <div class="footer-left">
+          <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+          <span class="btn-animate">
+            <a class="btn-primary" href="#">Shop Secretlab Chairs</a>
+          </span>
+          <p class="copyright-p">
+            Copyright © 2015 – 2020 Secretlab. <br>
+            All rights reserved. <br>
+            Secretlab™ is a registered trademark of Secretlab SG Pte Ltd.
+          </p>
+        </div>
+
+        <section class="footer-right">
+          <h4>Recent Posts</h4>
+          <ul>
+            <li><a href="#">All you need to know about the Secretlab PRIME™ 2.0 PU leather</a></li>
+            <li><a href="#">Secretlab kicks off Make-A-Wish® partnership with 24-hour CHAIR-ity stream hosted by Team Liquid</a></li>
+            <li><a href="#">Secretlab launches Team Liquid Edition gaming chair to celebrate Team Liquid’s rich 20-year legacy of success</a></li>
+            <li><a href="#">Shipping updates in light of COVID-19</a></li>
+            <li><a href="#">Team Secret Puppey answers your burning questions from Twitter</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </footer>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>

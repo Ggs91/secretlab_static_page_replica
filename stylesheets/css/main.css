@@ -1,0 +1,535 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*A aplliquer direct à tout élément qui voudrais avoir un effet de voile sombre + text qui passe en blanc*/
+/*Toutes div/éléments qui a un ENFANT qui include cette classe sera entièrement clickable. Possible ensuite de target via js*/
+.metalink {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100; }
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font: 400 1rem/2rem "Muli", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+.container {
+  max-width: 1500px;
+  padding: 0 90px;
+  margin: 0 auto; }
+  @media only screen and (max-width: 1000px) {
+    .container {
+      max-width: 600px;
+      padding: 0; } }
+  @media only screen and (max-width: 690px) {
+    .container {
+      max-width: 420px; } }
+  @media only screen and (max-width: 480px) {
+    .container {
+      max-width: 320px; } }
+  @media only screen and (max-width: 320px) {
+    .container {
+      max-width: 300px; } }
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+a {
+  text-decoration: none;
+  color: #333333; }
+
+/*
+========================================
+Icons
+========================================
+*/
+.social-links a {
+  color: #000;
+  font-size: 1.2rem; }
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+.btn-primary {
+  background: #a72a2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 200px; }
+
+.img-animate {
+  border-radius: 0.6rem;
+  display: block; }
+
+.btn-animate {
+  display: inline-block;
+  /*Necessaire pour le span du showcase et footer car ce sont de vrai span (inline donc le translateY s'applique pas dessu), pas le header car le span est flex-item en fait */ }
+  .btn-animate:hover {
+    /*On l'ajoute au hover des article*/
+    -webkit-transition: all 0.45s;
+    -webkit-transform: translate3d(0, -3px, 0);
+    -webkit-box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75); }
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+#primary-header {
+  position: fixed;
+  /*3 lignes pour fixer le header + margin-top de la mm hauteur de son contenu à l'élément suivant car sort du flow.*/
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1; }
+
+.header-wrapper {
+  transition: all .5s;
+  /*Sa transition de taille va faire grandir et rapetissir le logo en mm temps car il est en %age de la hauteur du header-wrapper*/
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.3rem;
+  /*Sa taille à lui qui control la taille du header les div au dessus d'elle le fit*/ }
+
+.header-left {
+  height: 70%;
+  /*Control la hauteur du flex item et donc la hauteur de l'img (stretch perso) car l'img la fit*/ }
+
+.logo {
+  display: block;
+  /*2lignes pr que l'img fit son container (flex-item)*/
+  max-height: 100%; }
+
+.header-right {
+  display: flex;
+  height: 100px;
+  align-items: center; }
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 5rem;
+  margin-right: 2.5rem; }
+
+/*
+  ========================================
+  Primary footer
+  ========================================
+*/
+#primary-footer {
+  background-color: #F2F2F2;
+  padding-top: 5rem;
+  padding-bottom: 6rem; }
+
+.footer-wrapper {
+  display: flex;
+  align-items: flex-start; }
+
+.footer-left,
+.footer-right {
+  flex: 1; }
+
+.footer-right {
+  margin-left: 1rem;
+  min-width: 0;
+  /*Force le contenu inseccable à respecter flex:1;*/ }
+
+#primary-footer .social-links {
+  padding-bottom: 2rem; }
+
+#primary-footer .social-links i {
+  font-size: 1.5rem; }
+
+#primary-footer .social-links li {
+  margin-right: 1rem; }
+
+.copyright-p {
+  margin-top: 2rem;
+  color: #666; }
+
+.footer-right h4 {
+  color: #0a0a0a;
+  font-weight: 700;
+  margin-bottom: 1rem; }
+
+.footer-right li {
+  margin-bottom: 0.3rem; }
+
+.footer-right li a {
+  display: block;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+/*
+  ========================================
+  Showcase
+  ========================================
+*/
+#showcase {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1);
+  margin-top: 6.3rem;
+  display: flex;
+  position: relative;
+  padding: 8.5rem 6rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  /*Cache le background img qui est plus grde que la section*/ }
+  @media only screen and (max-width: 1000px) {
+    #showcase {
+      /*On diminue la taille du texte*/
+      margin-top: 4rem;
+      /*On remonte le showcaseau même niveau que le header quand il shrink pour qu'il soit juste en dessous*/
+      padding: 4rem 2.5rem;
+      /*On enlève bcp de padding pour pas que le text soit écraser. Ca aasocié avec le max-width du container donne 1 effet de gros réajustement de la page*/ } }
+  @media only screen and (max-width: 690px) {
+    #showcase {
+      padding: 2rem 1rem; } }
+
+.showcase-bg {
+  position: absolute;
+  bottom: 0;
+  /*Je donne le point de départ bottom et non pas top car l'img*/
+  left: 0;
+  width: 100%;
+  height: 105%;
+  object-fit: cover;
+  /*object-fit dicte le comportement de l'img regardless de sa taille. Là je dis qu'elle cover tjs avec un respect du ration. Ca taille elle est set via top left...*/
+  display: block;
+  border-radius: 0.6rem;
+  z-index: -1; }
+
+#showcase .text {
+  display: flex;
+  flex: 1; }
+
+#showcase .inner-wrap-text {
+  flex-basis: 50%; }
+  #showcase .inner-wrap-text h5 {
+    position: relative;
+    /*Sert à la fois pour mettre le :before ET mettre le z-index necessaire pour mettre les h5 au dessus du metalink des article. */
+    z-index: 150;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.1rem; }
+    #showcase .inner-wrap-text h5:before {
+      content: "";
+      position: absolute;
+      /*on est en train de mettre une div ac height:2px et sans width sous le contenu*/
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      background-color: #fff;
+      -webkit-transition: all 0.3s ease-in-out; }
+    #showcase .inner-wrap-text h5:hover:before {
+      visibility: visible;
+      width: 100%;
+      font-weight: 700; }
+
+#showcase h5 {
+  color: #fff; }
+
+#showcase h2 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1.3;
+  margin-top: 1rem;
+  margin-bottom: 3rem; }
+  @media only screen and (max-width: 1300px) {
+    #showcase h2 {
+      /*On diminue la taille du texte*/
+      font-size: 2.3rem;
+      line-height: 1.2; } }
+
+#showcase p {
+  margin-bottom: 3rem;
+  width: 75%; }
+
+/*Main wrapper*/
+.main-wrapper {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  /*Au lieu de mettre de la margin/padding entre les éléments je met space between entre les article et la sidebar, puis leur set direct des flex-basis personalisé*/
+  align-items: flex-start; }
+
+/*Articles*/
+#articles {
+  -ms-flex-preferred-size: 66.667%;
+  /*environs 2/3 de la place dispo apres avoir soustrait padding et margin du container*/
+  flex-basis: 66.667%;
+  max-width: 66.667%; }
+
+.teaser {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem; }
+  .teaser:hover .img-animate {
+    /*Au hover du teaser, on addClass .animate à l'element .img-animate (cf fiche "hover")*/
+    /*On l'ajoute au hover des article*/
+    -webkit-transition: all 0.45s;
+    -webkit-transform: translate3d(0, -3px, 0);
+    -webkit-box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 23px 123px -9px rgba(0, 0, 0, 0.75); }
+
+.teaser-img {
+  flex: 1;
+  /*Flexbasis impose (comme un hard width) la taille du flex item*/ }
+
+.teaser-img img {
+  display: block;
+  max-width: 100%;
+  /*Puis l'img est forcée d'être contenue avec un ratio gardée/*/
+  border-radius: 0.6rem; }
+
+.teaser-text {
+  padding: 0 2rem;
+  flex: 1.8; }
+
+.teaser-text h5 {
+  position: relative;
+  /*Sert à la fois pour mettre le :before ET mettre le z-index necessaire pour mettre les h5 au dessus du metalink des article. */
+  z-index: 150;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a72a2f;
+  margin-bottom: 0.3rem; }
+  .teaser-text h5:before {
+    content: "";
+    position: absolute;
+    /*on est en train de mettre une div ac height:2px et sans width sous le contenu*/
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #a72a2f;
+    -webkit-transition: all 0.3s ease-in-out; }
+  .teaser-text h5:hover:before {
+    visibility: visible;
+    width: 100%;
+    font-weight: 700; }
+
+.teaser-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.8rem; }
+
+.teaser-text p {
+  margin-bottom: 1.2rem; }
+
+/*Sidebar*/
+#sidebar {
+  -ms-flex-preferred-size: 28%;
+  /*Pas 33% mais 28% car je veut la sidebar plus cintrée et elle sera décalée avec space-between des articles*/
+  flex-basis: 28%;
+  max-width: 28%; }
+
+#sidebar h4 {
+  color: #999;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.7rem; }
+
+.sidebar-form {
+  display: flex;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid lightgray;
+  transition: border-color 0.4s ease; }
+
+.sidebar-form input {
+  font-family: "FontAwesome";
+  flex: 1;
+  min-width: 0;
+  /*input est "inseccable" car il vient avec un width par defaut ds le navigateur*/ }
+
+.sidebar-form button {
+  flex-basis: 15%;
+  cursor: pointer; }
+
+.sidebar-form button i {
+  color: #a72a2f; }
+
+.sidebar-form input,
+.sidebar-form button {
+  background-color: #F6F6F6;
+  border: none;
+  padding: 1rem 0.5rem; }
+
+.bg-img {
+  /*Images non introduite vie :before !!! Mais avec opacity 0 qui passe en 1 (js) à l'hover du metalink*/
+  position: absolute;
+  top: 0;
+  /*4 ligne pour positionner l'élément comme un before.on lui dit qu'on veut qu'elle couvre le li parent*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*Cette ligne n'a rien a voir, elle s'occupe de comment crop l'img*/
+  /*Cette ppiété permet de traiter l'img comme une background-image !*/
+  z-index: -1;
+  border-radius: 0.6rem;
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1); }
+
+#sidebar .trending {
+  margin-bottom: 3rem; }
+
+#sidebar .trending li {
+  border: 1px solid lightgray;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1); }
+  #sidebar .trending li:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1); }
+    #sidebar .trending li:hover .bg-img {
+      opacity: 1; }
+
+#sidebar .trending h3 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 0.3rem; }
+
+#sidebar .categories li {
+  font-weight: 700;
+  font-size: 1.1rem; }
+
+#sidebar .categories li:hover a {
+  color: #a72a2f; }
+
+/* Media Queries */
+@media (max-width: 1000px) {
+  /*Le header qui shrink plus sous les 100px est un breakpoint au niveau du js*/
+  .main-wrapper {
+    flex-wrap: wrap;
+    /*On permet au flex items de wrapper*/ }
+
+  #articles,
+  #sidebar {
+    /*Il prennent toute la largeur dispo*/
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%; }
+
+  #primary-header .social-links {
+    display: none; }
+
+  .shop-now-btn {
+    padding: 0.7rem 1.5rem;
+    font-weight: 700;
+    font-size: 15px; }
+
+  #showcase .inner-wrap-text {
+    /*On laisse plus de place au text de la section showcase*/
+    flex-basis: 100%; } }
+@media (max-width: 690px) {
+  .teaser {
+    flex-wrap: wrap;
+    margin-bottom: 3rem; }
+
+  .teaser-img, .teaser-text {
+    flex-basis: 100%; }
+
+  .teaser-text {
+    padding: 1rem 0; }
+
+  .footer-wrapper {
+    flex-wrap: wrap; }
+
+  .footer-left,
+  .footer-right {
+    flex-basis: 100%; }
+
+  .footer-right {
+    margin-left: 0;
+    margin-top: 3rem; } }
+
+/*# sourceMappingURL=main.css.map */
