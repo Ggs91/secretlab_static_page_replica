@@ -11,7 +11,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
   * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
-  * [One last optimization: activate animation on viewport only](#One-last-optimization:-activate-animation-on viewport-only)
+  * [One last optimization: activate animation on viewport only](#One-last-optimization-activate-animation-on viewport-only)
 
 
 * [Usage](#usage)
