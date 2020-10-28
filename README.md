@@ -113,7 +113,44 @@ Now without listening to the scroll event, we have an optimized feedback of the 
 And not only the parallax effect, but any other animation that is trigger on the page scroll can now be implemented. For example, the header shrinking is based on the same technique, not a `window.scroll` event.
 
 ### Laying out the elements for the parallax effect
+The parallax consist of a hero `<section>` with an absolutly positioned `<img/>`.
 
+The image has a z-index lower than the section, this is just so that it's covered by the section wich will be taller than the image it contains.
+Both elements are still on the same layer (same "depth" of the page). There is no translation on the Z axis, and we haven't set any perspective property on the showcase section.
+When the page scroll **the elements will move at a different speed** (we'll cover that on the next section). This is what gives the parallax visual effect.
+
+```
+// index.html
+
+<section id="showcase">
+  <img class="showcase-bg" src="images/leather.jpg" alt="">
+  <div class="text">
+
+   // code here will scroll at the same speed as the showcase section
+
+  </div>
+  </section>
+```
+```
+// main.css 
+
+#showcase {
+  position: relative;
+  overflow: hidden; // Hide overflow of the image because it's styled higher than the section
+  //...
+}
+
+.showcase-bg {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 105%; //The image has a greater high than the section so it has room to scroll without letting a "whole" in the background of the section
+  object-fit: cover; // Make the image cover the section with respect of its ratio 
+  z-index: -1; 
+}
+```
 ### Moving the image at a different speed when the page scrolls with optimization
 
 ### Activate animation on viewport only 
