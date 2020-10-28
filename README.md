@@ -224,7 +224,7 @@ function scrollLoop(e) {
 }
 ```
 
-### Listening to the page's scroll
+### Conclusion
 
 Here we have it. An optimized scrolling effect using css and cross-browsers compatible. 
 * I didn't use the scroll event because it's called in a rate way above the rate screens renders.
