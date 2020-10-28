@@ -176,6 +176,8 @@ A positive value will make the image scroll down. A negative one will make the i
 
 const showcaseBG = document.querySelector(".showcase-bg");
 
+window.addEventListener("DOMContentLoaded", scrollLoop, false);
+
 function scrollLoop(e) {
   xScrollPosition = window.scrollX;
   yScrollPosition = window.scrollY;
@@ -197,6 +199,7 @@ We can now create a function that will detect whenever a part of the target elem
 
 ```
 // main.js
+
 function isVisible (ele) {
   const { top, bottom } = ele.getBoundingClientRect();
   const vHeight = (window.innerHeight || document.documentElement.clientHeight);
@@ -204,5 +207,25 @@ function isVisible (ele) {
   return (
     (top > 0 || bottom > 0) &&
     top < vHeight);
+}
+```
+
+Now we can use it in our `scrollLoop` function
+
+```
+//main.js
+
+window.addEventListener("DOMContentLoaded", scrollLoop, false);
+
+const showcase = document.getElementById("showcase")
+const showcaseBG = document.querySelector(".showcase-bg");
+
+function scrollLoop(e) {
+  xScrollPosition = window.scrollX; 
+  yScrollPosition = window.scrollY;
+  if (isVisible(showcase)) { //activate animation only if the showcase section appears in the viewport
+    setTranslate(0, yScrollPosition * 0.15, showcaseBG);
+  }
+  requestAnimationFrame(scrollLoop);
 }
 ```
