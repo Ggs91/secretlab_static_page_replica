@@ -84,11 +84,11 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 
 * Supported on all modern desktop and mobile browsers.
 
-It sounds too good to be true, but this is what requestAnimationFrame() is able to do. 
+It sounds too good to be true, but this is what `requestAnimationFrame()` is able to do. 
 
 So here I've found my new friend for performance optimization.
 
-To use `window.requestAnimationFrame()` for my purpose (mimic listening to the page's scroll), I simply used it in a function that get the scrollX and scrollY of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the scrollX and scrollY positions of the page. 
+To use `window.requestAnimationFrame()` for my purpose (mimic listening to the page's scroll), I simply used it in a function that get the `scrollX` and `scrollY` of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the `scrollX` and `scrollY` positions of the page. 
 
 ```
 //main.js 
@@ -108,12 +108,12 @@ function scrollLoop(e) {
 
 Now without listening to the scroll event, we have an optimized feedback of the page's position at a 60fps rate.
 
-And not only the parallax effect, but any other animation that is trigger on the page scroll can now be implemented. For example, the header shrinking is based on the same technique, not a `window.scroll` event.
+And not only the parallax effect, but any other animation that is trigger on the page's scroll can now be implemented. For example, the header shrinking of this project is based on the same technique, not a `window.scroll` event.
 
 ### Laying out the elements for the parallax effect
 The parallax consist of a showcase `<section>` with an absolutly positioned `<img/>`.
 
-The image has a z-index lower than the section, this is just so that it's covered by the section wich will be taller than the image it contains.
+The image has a `z-index` lower than the section, this is just so that it covered by the section wich will be taller than the image it contains.
 Both elements are still on the same layer (same "depth" of the page). There is no translation on the Z axis, and we haven't set any perspective property on the showcase section.
 When the page scroll **the elements will move at a different speed** (we'll cover that on the next section). This is what gives the parallax visual effect.
 
@@ -152,7 +152,7 @@ When the page scroll **the elements will move at a different speed** (we'll cove
 ### Moving the image at a different speed when the page scrolls with optimization
 
 This is where we implement the parallax effect. We'll target the image and changed the `x` value of its `translate3d` property.
-I changed the translate3d instead of the `transalte` or `translateX` because this forces the translation to be handled by the GPU instead of the CPU that is usually very busy with tasks already.
+I changed the `translate3d` instead of the `transalte` or `translateX` because this forces the translation to be handled by the GPU instead of the CPU that is usually very busy with tasks already.
 So now we can add a function that will take care of setting the values updated for `x` and `y` for a given element.
 
 ```
