@@ -41,9 +41,22 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 
 ## Performance-Optimized Parallax Effect with Cross-Browsers Compatibility
 
+My main purpose for this part was to build an as efficient as possible parallax effect that would works on all devices and browsers. 
+
 ### Listening to the page's scroll
 
+When I first strated to look up how to make a parallax effect I found a lot of articles and libraries relying on the window.scroll event. 
+
 #### Bad performance of the `window.scroll` event
+
+I came across the [Performant Parallaxing](https://developers.google.com/web/updates/2016/12/performant-parallaxing) article by  Paul Lewis.
+He mentionned: "In most browsers scroll events are delivered as 'best-effort' and are not guaranteed to be delivered on every frame of the scroll animation".
+
+After few research I also discovered that the scroll event get called too many time per second, way more than how fast the screens actually updates.
+So it is a waste of CPU cycles and, so, bad performance.
+
+So I wanted to avoid it by all means.
+
 #### Not listening to the scroll event at all?
 #### Using `window.requestAnimationFrame()` to "listen" to the scroll
 ### Laying out the elements for the parallax effect
