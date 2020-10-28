@@ -71,6 +71,15 @@ So I took an another approach.
 
 When first I learnt about this function I taught to myself, this is the most increadible function that exists for optimization.
 
+```
+// Setting requestAnimationFrame to work on every browser. 
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame;
+```
+
 * Compared to the scroll event it is called only 60 time per second, wich is  enough because it's the speed of the screen display. More than that would be a waste of performance, which the scroll event does.
  
 * It is called only when the browser is available.
@@ -83,16 +92,25 @@ It sounds too good to be true, but this is what requestAnimationFrame() is able 
 
 So here I've found my new friend for performance optimization.
 
-To use `window.requestAnimationFrame()` for my purpose of mimic listening to the page's scroll, I simply used it in a function that get the scrollX and scrollY of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the scrollX and scrollY positions of the page. 
+To use `window.requestAnimationFrame()` for my purpose (mimic listening to the page's scroll), I simply used it in a function that get the scrollX and scrollY of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the scrollX and scrollY positions of the page. 
 
 ```
+let xScrollPosition; //Variables declaration
+let yScrollPosition; 
 
+function scrollLoop(e) {
+  xScrollPosition = window.scrollX;
+  yScrollPosition = window.scrollY;
+
+  // This function will be called 60 times per second
+
+  requestAnimationFrame(scrollLoop);
+}
 ```
 
 Now without listening to the scroll event, we have an optimized feedback of the page's position at a 60fps rate.
 
 And not only the parallax effect, but any other animation that is trigger on the page scroll can now be implemented. For example, the header shrinking is based on the same technique, not a `window.scroll` event.
-
 
 ### Laying out the elements for the parallax effect
 
