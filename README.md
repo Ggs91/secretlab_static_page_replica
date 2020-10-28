@@ -113,7 +113,7 @@ Now without listening to the scroll event, we have an optimized feedback of the 
 And not only the parallax effect, but any other animation that is trigger on the page scroll can now be implemented. For example, the header shrinking is based on the same technique, not a `window.scroll` event.
 
 ### Laying out the elements for the parallax effect
-The parallax consist of a hero `<section>` with an absolutly positioned `<img/>`.
+The parallax consist of a showcase `<section>` with an absolutly positioned `<img/>`.
 
 The image has a z-index lower than the section, this is just so that it's covered by the section wich will be taller than the image it contains.
 Both elements are still on the same layer (same "depth" of the page). There is no translation on the Z axis, and we haven't set any perspective property on the showcase section.
