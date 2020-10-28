@@ -9,6 +9,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 * [About the Project](#about-the-project)
 * [Case Study: Efficient Parallax Effect](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
   * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
+   * [Bad performance of the window.scroll event](#bad-performance-of-the-window.scroll-event)
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
   * [Activate animation on viewport only](#Activate-animation-on-viewport-only)
@@ -38,6 +39,8 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 ## Performance-Optimized Parallax Effect with Cross-Browsers Compatibility
 
 ### Listening to the page's scroll
+
+#### Bad performance of the window.scroll event
 
 ### Laying out the elements for the parallax effect
 
