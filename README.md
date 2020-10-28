@@ -8,14 +8,14 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 
 * [About the Project](#about-the-project)
 * [Case Study: Efficient Parallax Effect](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
-  1. [Listening to the page's scroll](#Listening-to-the-pages-scroll)
-    a. [Bad performance of the `window.scroll` event](#bad-performance-of-the-window.scroll-event)
-    b. [Not listening to the scroll event at all?](#Not-listening-to-the-scroll-event-at-all)
-    c. [Using `window.requestAnimationFrame()` to "listen" to the scroll](#Using-window.requestAnimationFrame-to-listen-to-the-scroll)
+  * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
+    1. [Bad performance of the `window.scroll` event](#bad-performance-of-the-window.scroll-event)
+    2. [Not listening to the scroll event at all?](#Not-listening-to-the-scroll-event-at-all)
+    3. [Using `window.requestAnimationFrame()` to "listen" to the scroll](#Using-window.requestAnimationFrame-to-listen-to-the-scroll)
     
-  2. [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
-  3. [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
-  4. [Activate animation on viewport only](#Activate-animation-on-viewport-only)
+  * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
+  * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
+  * [Activate animation on viewport only](#Activate-animation-on-viewport-only)
 
 
 
