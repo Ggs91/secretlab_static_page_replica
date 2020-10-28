@@ -24,7 +24,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 
 ## About The Project
 
-This is a study case of my greatest takeaway of this project.
+This is a case styudy of my greatest takeaway of this project.
 
 I've learnt a lot while recreating this webpage:
 
