@@ -16,15 +16,8 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
   * [Activate animation on viewport only](#Activate-animation-on-viewport-only)
+* [Author](#author)
 
-
-
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
@@ -229,3 +222,9 @@ function scrollLoop(e) {
   requestAnimationFrame(scrollLoop);
 }
 ```
+## Author
+**Georges Atalla**
+
+Email - georges_atalla@hotmail.fr
+
+Github - https://github.com/Ggs91/
