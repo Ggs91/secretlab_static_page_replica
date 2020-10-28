@@ -39,7 +39,7 @@ My main purpose for this part was to build an as efficient as possible parallax 
 
 ### Listening to the page's scroll
 
-When I first strated to look up how to make a parallax effect I found a lot of articles and libraries relying on the window.scroll event. 
+When I first strated to look up how to make a parallax effect I found a lot of articles and libraries relying on the `window.scroll` event. 
 
 #### Bad performance of the `window.scroll` event
 
