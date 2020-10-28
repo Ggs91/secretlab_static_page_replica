@@ -42,6 +42,6 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 
 ### Moving the image at a different speed when the page scrolls with optimization
 
-### One last optimization: activate animation on viewport only 
+### Activate animation on viewport only 
 
 
