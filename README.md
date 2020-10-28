@@ -10,6 +10,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 * [Case Study: Efficient Parallax Effect](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
   * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
     1. [Bad performance of the `window.scroll` event](#bad-performance-of-the-window.scroll-event)
+    2. [Not listening to the scroll event at all?](#Not-listening-to-the-scroll-event-at-all)
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
   * [Activate animation on viewport only](#Activate-animation-on-viewport-only)
@@ -41,6 +42,7 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 ### Listening to the page's scroll
 
 #### Bad performance of the `window.scroll` event
+#### Not listening to the scroll event at all?
 
 ### Laying out the elements for the parallax effect
 
