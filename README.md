@@ -16,6 +16,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
   * [Activate animation on viewport only](#Activate-animation-on-viewport-only)
+  * [Conclusion](#conclusion)
 * [Author](#author)
 
 
@@ -222,6 +223,18 @@ function scrollLoop(e) {
   requestAnimationFrame(scrollLoop);
 }
 ```
+
+### Listening to the page's scroll
+
+Here we have it. An optimized scrolling effect using css and cross-browsers compatible. 
+* I didn't use the scroll event because it's called in a rate way above the rate screens renders.
+* Instead we used `requestAnimationFrame` to get the position in a way more optimized rate: 60fps. Also this function is called whenever the browser is free, not in a middle of other tasks. 
+* We changed css properties that are handled by the GPU instead of the CPU that is usually already busy with tasks
+* We detect if the element is in the viewport so we activate the animation only then. If the user can't see it, there's no need to waste resources.
+
+It took me few days to gather informations, understand it and trial & error until I made it work. 
+It was frutrating but very satisfying once everything was setup correctly together the way I wanted to. 
+
 ## Author
 **Georges Atalla**
 
