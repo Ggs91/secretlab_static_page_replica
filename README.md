@@ -58,7 +58,42 @@ So it is a waste of CPU cycles and, so, bad performance.
 So I wanted to avoid it by all means.
 
 #### Not listening to the scroll event at all?
+
+In the same article, the author talks about an another approach that have been done by Scott Kellum and Keith Clark. 
+
+Given that the parallax effect is just a difference of perceived speed between 2 layers that are on different depth from the user perspective, they modelized it in css. 
+
+I have tried to set up a parallax using their approach, it worked on Chrome, but I failed at making it work successfully on Firefox. 
+
+So I took an another approach.
+
 #### Using `window.requestAnimationFrame()` to "listen" to the scroll
+
+When first I learnt about this function I taught to myself, this is the most increadible function that exists for optimization.
+
+* Compared to the scroll event it is called only 60 time per second, wich is  enough because it's the speed of the screen display. More than that would be a waste of performance, which the scroll event does.
+ 
+* It is called only when the browser is available.
+
+* It slows down, speeds up  or even pauses (if the user change tab for exemple).
+
+* Supported on all modern desktop and mobil browsers.
+
+It sounds too good to be true, but this is what requestAnimationFrame() is able to do. 
+
+So here I've found my new friend for performance optimization.
+
+To use `window.requestAnimationFrame()` for my purpose of mimic listening to the page's scroll, I simply used it in a function that get the scrollX and scrollY of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the scrollX and scrollY positions of the page. 
+
+```
+
+```
+
+Now without listening to the scroll event, we have an optimized feedback of the page's position at a 60fps rate.
+
+And not only the parallax effect, but any other animation that is trigger on the page scroll can now be implemented. For example, the header shrinking is based on the same technique, not a `window.scroll` event.
+
+
 ### Laying out the elements for the parallax effect
 
 ### Moving the image at a different speed when the page scrolls with optimization
