@@ -40,7 +40,7 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 
 ### Listening to the page's scroll
 
-#### Bad performance of the window scroll event
+#### Bad performance of the `window.scroll` event
 
 ### Laying out the elements for the parallax effect
 
