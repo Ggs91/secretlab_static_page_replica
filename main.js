@@ -24,12 +24,12 @@ function scrollHeader(e){
   requestAnimationFrame(scrollHeader);
 }
 
-var x = window.matchMedia("(min-width: 1000px)") //Media query js pour le header.
+var x = window.matchMedia("(min-width: 1000px)") //Media query js for the header.
 scrollHeader(x)
 x.addListener(scrollHeader)
 
 
-// Border bottom du form qui change de couleur
+// Changing color of form border-bottom
 
 let sidebarForm = document.getElementsByClassName("sidebar-form")[0]
 let sidebarInput = document.querySelectorAll(".sidebar-form input")[0]
@@ -42,18 +42,30 @@ sidebarInput.addEventListener("focusout", function(){
 })
 
 
-// parallax pour la section show
+// parallax for show section
 window.addEventListener("DOMContentLoaded", scrollLoop, false);
 
-var showcaseBG = document.getElementsByClassName("showcase-bg")[0];
+const showcase = document.getElementById("showcase")
+const showcaseBG = document.querySelector(".showcase-bg");
 
 function scrollLoop(e) {// requestAnimation frame fait en sorte que cette fction soit appeléé 60 fois par second. Dc 60 fois par sec on appel setTranslate qui va update le transform3D de l'img donc sa position
   xScrollPosition = window.scrollX; //On utilise donc pas le scoll event js pour avoir la position du scroll qui est moins performant, main une demande de la position x et y du scroll à un moment précis 60/s.
   yScrollPosition = window.scrollY;
-  setTranslate(0, yScrollPosition * 0.15, showcaseBG);
+  if (isVisible(showcase)) { //activate animation only if the showcase section appear in the viewport
+    setTranslate(0, yScrollPosition * 0.15, showcaseBG);
+  }
   requestAnimationFrame(scrollLoop);
 }
 
 function setTranslate(xPos, yPos, el){
-  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`; // We change translate3d instead of translate for pers optimisation. It will be handle by GPU instead of GPU
+}
+
+function isVisible (ele) {
+  const { top, bottom } = ele.getBoundingClientRect();
+  const vHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+  return (
+    (top > 0 || bottom > 0) &&
+    top < vHeight);
 }
