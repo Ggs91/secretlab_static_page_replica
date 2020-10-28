@@ -11,7 +11,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
   * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
     1. [Bad performance of the `window.scroll` event](#bad-performance-of-the-window.scroll-event)
     2. [Not listening to the scroll event at all?](#Not-listening-to-the-scroll-event-at-all)
-    3. [Using `window.requestAnimationFrame()` to "listen" to the scroll](#Using `window.requestAnimationFrame()` to "listen" to the scroll)
+    3. [Using `window.requestAnimationFrame()` to "listen" to the scroll](#Using-window.requestAnimationFrame-to-listen-to-the-scroll)
     
   * [Laying out the elements for the parallax effect](#Laying-out-the-elements-for-the-parallax-effect)
   * [Moving the image at a different speed when the page scrolls with optimization](#Moving-the-image-at-a-different-speed-when-the-page-scrolls-with-optimization)
