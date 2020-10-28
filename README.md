@@ -95,6 +95,8 @@ So here I've found my new friend for performance optimization.
 To use `window.requestAnimationFrame()` for my purpose (mimic listening to the page's scroll), I simply used it in a function that get the scrollX and scrollY of the window. This function, thanks to the use of `window.requestAnimationFrame()`, will be called at a 60fps rate, and so will be updated the scrollX and scrollY positions of the page. 
 
 ```
+//main.js 
+
 let xScrollPosition; //Variables declaration
 let yScrollPosition; 
 
@@ -129,7 +131,7 @@ When the page scroll **the elements will move at a different speed** (we'll cove
    // code here will scroll at the same speed as the showcase section
 
   </div>
-  </section>
+</section>
 ```
 ```
 // main.css 
@@ -152,6 +154,35 @@ When the page scroll **the elements will move at a different speed** (we'll cove
 }
 ```
 ### Moving the image at a different speed when the page scrolls with optimization
+
+This is where we implement the parallax effect. We'll target the image and changed the `x` value of its `translate3d` property.
+I changed the translate3d instead of the `transalte` or `translateX` because this forces the translation to be handled by the GPU instead of the CPU that is usually very busy with tasks already.
+So now we can add a function that will take care of setting the values updated for `x` and `y` for a given element.
+
+```
+//main.js 
+
+function setTranslate(xPos, yPos, el){
+  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`; // Translation will be handled by GPU instead of CPU for better performance.
+}
+```
+
+Now we can use it in our `scrolLoop` function. We'll not be translating the image on its `x` axis, as the parallax effect is only happening while scrolling verticaly. 
+For the `y` axis we multiply the translation by a fraction of the normal speed of the page. The closer it is to 1 the closer it is to the default scrolling speed.
+A positive value will make the image scroll down. A negative one will make the image scroll up.
+
+```
+function scrollLoop(e) {
+  xScrollPosition = window.scrollX;
+  yScrollPosition = window.scrollY;
+  
+  setTranslate(0, yScrollPosition * 0.15, showcaseBG);
+  
+  requestAnimationFrame(scrollLoop);
+}
+```
+
+
 
 ### Activate animation on viewport only 
 
