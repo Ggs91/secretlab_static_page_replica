@@ -7,8 +7,8 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Case Study](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
-  * [Prerequisites](#prerequisites)
+* [Case Study: Efficient Parallax Effect](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
+  * [Listening to the page's scroll](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
@@ -30,7 +30,7 @@ I've learnt a lot while recreating this webpage:
 
 But here I chose to only develop my journey to get the **parallax effect** working **the way I wanted to**.
 
-## Performance-optimized parallax effect with cross-browsers compatibility
+## Performance-Optimized Parallax Effect with Cross-Browsers Compatibility
 
 
 
