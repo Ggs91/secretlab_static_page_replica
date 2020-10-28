@@ -8,7 +8,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 
 * [About the Project](#about-the-project)
 * [Case Study: Efficient Parallax Effect](#Performance-optimized-parallax-effect-with-cross-browsers-compatibility)
-  * [Listening to the page's scroll](#Listening-to-the-page's-scroll)
+  * [Listening to the page's scroll](#Listening-to-the-pages-scroll)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
