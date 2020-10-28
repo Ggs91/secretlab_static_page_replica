@@ -32,6 +32,8 @@ But here I chose to only develop my journey to get the **parallax effect** worki
 
 ## Performance-Optimized Parallax Effect with Cross-Browsers Compatibility
 
+### Listening to the page's scroll
+
 
 
 
