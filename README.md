@@ -7,7 +7,7 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Performance-optimized parallax effect with cross-browsers compatibility](#Performance-optimized parallax effect with cross-browsers compatibility)
+* [Case Study](#case-study)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
