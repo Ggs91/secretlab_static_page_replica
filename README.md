@@ -28,7 +28,7 @@ I've learnt a lot while recreating this webpage:
 
 * Creating a parallax effect using pure css and with a leading idea of having it as much performant as possible & with browsers support.
 * Managing to get the image logo of the header adapte with the height of the header shrinking / growing.
-* A strategy for layout to ease the work for reponsivness.
+* A strategy for layout to ease the work for responsiveness.
 * Making images keeping their ratios while adapting to a hard width container.
 
 But here I chose to only develop my journey to get the **parallax effect** working **the way I wanted to**.
