@@ -82,7 +82,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 
 * It slows down, speeds up  or even pauses (if the user change tab for exemple).
 
-* Supported on all modern desktop and mobil browsers.
+* Supported on all modern desktop and mobile browsers.
 
 It sounds too good to be true, but this is what requestAnimationFrame() is able to do. 
 
