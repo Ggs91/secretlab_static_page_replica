@@ -174,6 +174,8 @@ A positive value will make the image scroll down. A negative one will make the i
 ```
 //main.js 
 
+const showcaseBG = document.querySelector(".showcase-bg");
+
 function scrollLoop(e) {
   xScrollPosition = window.scrollX;
   yScrollPosition = window.scrollY;
@@ -186,4 +188,21 @@ function scrollLoop(e) {
 
 ### One last optimization: Activate animation on viewport only 
 
+To this point, the parallax happens all the time on the page's scroll.
+But there's no need to keep the animation going if the element is out of the viewport. The user can't see it anyway. 
+So let's make the animation active (aka translate the image) only if it's in the viewport frame. So we can save more on performance.
 
+To do this I used an API `Element.getBoundingClientRect()` that returns the size of an element and its position relative to the viewport.
+We can now create a function that will detect whenever a part of the target element (showcase section in our case) enter in the viewport
+
+```
+// main.js
+function isVisible (ele) {
+  const { top, bottom } = ele.getBoundingClientRect();
+  const vHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+  return (
+    (top > 0 || bottom > 0) &&
+    top < vHeight);
+}
+```
