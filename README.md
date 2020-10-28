@@ -172,6 +172,8 @@ For the `y` axis we multiply the translation by a fraction of the normal speed o
 A positive value will make the image scroll down. A negative one will make the image scroll up.
 
 ```
+//main.js 
+
 function scrollLoop(e) {
   xScrollPosition = window.scrollX;
   yScrollPosition = window.scrollY;
@@ -182,8 +184,6 @@ function scrollLoop(e) {
 }
 ```
 
-
-
-### Activate animation on viewport only 
+### One last optimization: Activate animation on viewport only 
 
 
