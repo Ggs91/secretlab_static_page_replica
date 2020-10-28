@@ -66,6 +66,8 @@ So I took an another approach.
 When first I learnt about this function I taught to myself, this is the most increadible function that exists for optimization.
 
 ```
+//main.js 
+
 // Setting requestAnimationFrame to work on every browser. 
 
 var requestAnimationFrame = window.requestAnimationFrame ||
