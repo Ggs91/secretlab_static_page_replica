@@ -55,7 +55,7 @@ So I wanted to avoid it by all means.
 
 In the same article, the author talks about an another approach that have been done by Scott Kellum and Keith Clark. 
 
-Given that the parallax effect is just a difference of perceived speed between 2 layers that are on different depth from the user perspective, they modelized it in css. 
+Given that the parallax effect is just a difference of perceived speed between 2 layers that are on different depth from the user perspective, they modelized it using the css `persective` property & the Z axis of the `transform3d` prorperty. 
 
 I have tried to set up a parallax using their approach, it worked on Chrome, but I failed at making it work successfully on Firefox. 
 
