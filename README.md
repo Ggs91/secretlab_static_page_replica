@@ -2,7 +2,7 @@
 
 A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills.
 
-[Live demo](https://ggs91.github.io/secretlab_static_page_replica/)
+[>> Live demo <<](https://ggs91.github.io/secretlab_static_page_replica/)
 
 ## Table of Contents
 
