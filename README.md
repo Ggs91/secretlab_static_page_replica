@@ -4,6 +4,8 @@ A static webpage built with HTML/CSS & JavaScript to sharpen my front-end skills
 
 [>> Live demo <<](https://ggs91.github.io/secretlab_static_page_replica/)
 
+This is a replica of the first page of [Secretlab blog](https://blog.secretlab.co/stories/).
+
 ## Table of Contents
 
 * [About the Project](#about-the-project)
